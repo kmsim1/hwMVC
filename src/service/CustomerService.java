@@ -28,7 +28,6 @@ public class CustomerService {
 	}
 
 	public void addCustomer(Customer customer) {
-		
 			customers.put(customer.getId(), customer);
 	}
 	
