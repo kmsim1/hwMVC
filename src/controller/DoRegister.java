@@ -44,6 +44,7 @@ public class DoRegister extends HttpServlet {
 		String page;
 		
 		if(service.checkCustomer(signupCustomer)) {
+			
 			service.addCustomer(signupCustomer);
 			page = "/view/registerSuccess.jsp";
 			request.setAttribute("customer", signupCustomer);
