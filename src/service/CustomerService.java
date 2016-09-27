@@ -18,19 +18,31 @@ public class CustomerService {
 	public static CustomerService getInstance() {
 		return instance;
 	}
-
-	public boolean addCustomer(Customer customer) {
-		//customers.put(customer.getId(), customer);
+	
+	public boolean checkCustomer(Customer customer) {
 		if(customers.containsKey(customer.getId())) {
 			return false;
 		}
-		else {
-			customers.put(customer.getId(), customer);
+		else
 			return true;
-		}
+	}
+
+	public void addCustomer(Customer customer) {
+		
+			customers.put(customer.getId(), customer);
+			
+//		//customers.put(customer.getId(), customer);                                               
+//		if(customers.containsKey(customer.getId())) {
+//			return false;
+//		}
+//		else {
+//			customers.put(customer.getId(), customer);
+//			return true;
+//		}
 			
 	}
 	
+	//loginform에서 사용자가 입력한 id에 맞는 customer 정보를 찾는 메소드
 	public Customer findCustomer(String id) {
 		if(id != null)
 				return(customers.get(id.toLowerCase()));
@@ -38,6 +50,7 @@ public class CustomerService {
 			return null;
 	}
 
+	//로그인 시 findCustomer()로 찾은 고객정보를 리턴한다.
 	public Customer login(String id, String password) {
 		if (findCustomer(id) != null && findCustomer(id).getPassword().equals(password)) {
 			return findCustomer(id);
