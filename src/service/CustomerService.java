@@ -30,16 +30,6 @@ public class CustomerService {
 	public void addCustomer(Customer customer) {
 		
 			customers.put(customer.getId(), customer);
-			
-//		//customers.put(customer.getId(), customer);                                               
-//		if(customers.containsKey(customer.getId())) {
-//			return false;
-//		}
-//		else {
-//			customers.put(customer.getId(), customer);
-//			return true;
-//		}
-			
 	}
 	
 	//loginform에서 사용자가 입력한 id에 맞는 customer 정보를 찾는 메소드
