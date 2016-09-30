@@ -9,7 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Customer {
-
 	
 	private String id;
 	private String password;
